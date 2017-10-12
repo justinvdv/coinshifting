@@ -1,0 +1,27 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List</h1>
+      {{> loginButtons}}
+      <form class="new-wallet">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+        <button class="create-btc" type="submit">Create Bitcoin wallet</button>
+      </form>
+
+    </header>
+
+    <ul>
+      {{#each wallets}}
+        {{> wallet}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="wallet">
+    <div>
+      <button class="create-transaction" type="button" name="button">Create transaction</button>
+      <li>{{publicKey}}</li>
+      <li>{{type}}</li>
+    </div>
+</template>
